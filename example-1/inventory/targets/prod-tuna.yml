@@ -1,0 +1,16 @@
+classes:
+  - clusters.minikube
+  - components.namespace
+  - components.myapp
+  - components.docs
+  - components.scripts
+  - components.kapitan
+
+parameters:
+  target: prod-tuna
+
+  nginx:
+    image: nginx:1.13.8
+
+  myapp:
+    replicas: 5

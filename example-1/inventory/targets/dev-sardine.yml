@@ -1,0 +1,10 @@
+classes:
+  - clusters.minikube
+  - components.namespace
+  - components.myapp
+  - components.docs
+  - components.scripts
+  - components.kapitan
+
+parameters:
+  target: dev-sardine
