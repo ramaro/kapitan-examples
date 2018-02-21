@@ -1,0 +1,4 @@
+parameters:
+  kapitan:
+    docs:
+      - components/docs/README.md

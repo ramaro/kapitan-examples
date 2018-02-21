@@ -1,0 +1,13 @@
+{% set p = parameters %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to {{p.target}}!</title>
+</head>
+<body>
+<h1>Welcome to {{p.target}}!</h1>
+<p>
+This document was compiled with kapitan and is running in {{p.cluster.cluster}}
+</p>
+</body>
+</html>

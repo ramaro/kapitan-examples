@@ -1,0 +1,10 @@
+parameters:
+  nginx:
+    image: nginx:1.10
+
+  myapp:
+    replicas: 1
+
+  kapitan:
+    mains:
+      - components/myapp/main.jsonnet

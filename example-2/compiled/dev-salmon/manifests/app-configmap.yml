@@ -1,0 +1,29 @@
+apiVersion: v1
+data:
+  index.html: '<!DOCTYPE html>
+
+    <html>
+
+    <head>
+
+    <title>Welcome to dev-salmon!</title>
+
+    </head>
+
+    <body>
+
+    <h1>Welcome to dev-salmon!</h1>
+
+    <p>
+
+    This document was compiled with kapitan and is running in minikube
+
+    </p>
+
+    </body>
+
+    </html>'
+kind: ConfigMap
+metadata:
+  name: webroot
+  namespace: dev-salmon

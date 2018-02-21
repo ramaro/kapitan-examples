@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: dev-salmon
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - image: nginx:1.10
+          name: nginx
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /usr/share/nginx/html/
+              name: data
+              readOnly: true
+      volumes:
+        - configMap:
+            name: webroot
+          name: data

@@ -1,0 +1,5 @@
+parameters:
+  cluster:
+    name: minikube
+    cluster: minikube
+    user: minikube
