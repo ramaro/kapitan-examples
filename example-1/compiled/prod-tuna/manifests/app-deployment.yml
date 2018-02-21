@@ -13,3 +13,5 @@ spec:
       containers:
         - image: nginx:1.13.8
           name: nginx
+          ports:
+            - containerPort: 80
