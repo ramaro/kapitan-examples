@@ -1,0 +1,16 @@
+classes:
+  - projects.minikube
+
+  - components.tuna
+  - components.cod
+  - components.sardine
+
+  - features.brine
+  - features.canned
+
+  - releases.v2.0.0
+  - stages.development
+
+parameters:
+  target: dev-sea
+  owner: developers

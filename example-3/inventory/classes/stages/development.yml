@@ -1,0 +1,5 @@
+parameters:
+  stage: development
+  verbose: true
+  security: disabled
+  replicas: 1

@@ -1,0 +1,10 @@
+classes:
+  - projects.common
+
+parameters:
+  cluster:
+    type: minikube
+    id: minikube
+    name: minikube
+    cluster: minikube
+    user: minikube

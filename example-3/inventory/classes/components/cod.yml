@@ -1,0 +1,15 @@
+parameters:
+  releases:
+    cod: latest
+  cod:
+    image: alledm/cod:${cod:release}
+    release: ${releases:cod}
+    replicas: ${replicas}
+    args:
+    - --verbose=${verbose}
+
+  kapitan:
+    mains:
+      - components/cod/main.jsonnet
+    docs:
+      - components/cod/docs/cod.md

@@ -1,0 +1,10 @@
+classes:
+  - components.namespace
+  - components.scripts
+  - components.kapitan
+
+parameters:
+  description: ${stage} environment '${target}' owned by ${owner}
+  kapitan:
+    docs:
+      - components/docs/README.md

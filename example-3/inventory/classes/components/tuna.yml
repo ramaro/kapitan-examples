@@ -1,0 +1,16 @@
+parameters:
+  releases:
+    tuna: latest
+  tuna:
+    image: alledm/tuna:${tuna:release}
+    release: ${releases:tuna}
+    replicas: ${replicas}
+    args:
+    - --verbose=${verbose}
+    - --secret=?{ref:targets/${target}/tuna|randomstr}
+
+  kapitan:
+    mains:
+      - components/tuna/main.jsonnet
+    docs:
+      - components/tuna/docs/tuna.md

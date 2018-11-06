@@ -1,0 +1,5 @@
+parameters:
+  stage: prod
+  verbose: false
+  security: enabled
+  replicas: 10

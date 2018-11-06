@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    name: prod-sea
+  name: prod-sea
+  namespace: prod-sea

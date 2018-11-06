@@ -1,0 +1,12 @@
+classes:
+  - projects.common
+
+parameters:
+  project: kapitan-demo
+  cluster:
+    type: gke
+    id: ${cluster:type}_${project}_${cluster:zone}_${cluster:name}
+    name: standard-cluster-1
+    cluster: ${cluster:name}
+    user: ${cluster:type}_${project}_${cluster:zone}_${cluster:name}
+    zone: us-central1-a 

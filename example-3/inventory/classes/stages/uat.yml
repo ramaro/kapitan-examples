@@ -1,0 +1,5 @@
+parameters:
+  stage: uat
+  verbose: false
+  security: enabled
+  replicas: 5

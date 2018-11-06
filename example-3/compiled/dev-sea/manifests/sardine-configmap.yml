@@ -1,0 +1,29 @@
+apiVersion: v1
+data:
+  README: '<!DOCTYPE html>
+
+    <html>
+
+    <head>
+
+    <title>Welcome to dev-sea!</title>
+
+    </head>
+
+    <body>
+
+    <h1>Welcome to dev-sea!</h1>
+
+    <p>
+
+    This document was compiled with kapitan and is running in minikube
+
+    </p>
+
+    </body>
+
+    </html>'
+kind: ConfigMap
+metadata:
+  name: readme
+  namespace: dev-sea

@@ -1,0 +1,28 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: tuna
+  namespace: dev-sea
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tuna
+    spec:
+      containers:
+        - args:
+            - --verbose=True
+            - --secret=?{ref:targets/dev-sea/tuna:ee958e1c}
+            - --brine
+            - --canned
+          image: alledm/tuna:v2.0.0
+          name: tuna
+          volumeMounts:
+            - mountPath: /tmp
+              name: data
+              readOnly: true
+      volumes:
+        - configMap:
+            name: readme
+          name: data
