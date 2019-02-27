@@ -1,5 +1,5 @@
 classes:
-  - projects.minikube
+  - projects.katacoda
 
   - components.tuna
   - components.cod
