@@ -4,5 +4,5 @@
 
 Target *{{ i.target }}* is running:
 
-* {{ i.tuna.replicas }} replicas of *tuna* running image {{ i.tuna.image }} 
+* {{ i.sardine.replicas }} replicas of *sardine* running image {{ i.sardine.image }} 
 * on cluster {{ i.cluster.cluster }}

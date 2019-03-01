@@ -3,5 +3,5 @@
 
 Target *prod-sea* is running:
 
-* 10 replicas of *tuna* running image alledm/tuna:v2.0.0 
+* 10 replicas of *sardine* running image alledm/sardine:latest 
 * on cluster standard-cluster-1

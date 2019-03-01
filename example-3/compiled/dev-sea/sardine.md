@@ -3,5 +3,5 @@
 
 Target *dev-sea* is running:
 
-* 1 replicas of *tuna* running image alledm/tuna:v2.0.0 
+* 1 replicas of *sardine* running image alledm/sardine:latest 
 * on cluster kubernetes
