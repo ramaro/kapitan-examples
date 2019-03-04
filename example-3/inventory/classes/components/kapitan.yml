@@ -1,0 +1,16 @@
+parameters:
+  namespace: ${target}
+  kapitan:
+    vars:
+      target: ${target}
+    compile:
+      - output_path: manifests
+        output_type: yaml
+        input_type: jsonnet
+        input_paths: ${kapitan:mains}
+      - output_path: .
+        input_type: jinja2
+        input_paths: ${kapitan:docs}
+      - output_path: scripts
+        input_type: jinja2
+        input_paths: ${kapitan:scripts}

@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: sardine
+  namespace: prod-sea
+spec:
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: sardine
+    spec:
+      containers:
+        - args:
+            - --verbose=False
+          image: alledm/sardine:latest
+          name: sardine
+          volumeMounts:
+            - mountPath: /tmp
+              name: data
+              readOnly: true
+      volumes:
+        - configMap:
+            name: readme
+          name: data

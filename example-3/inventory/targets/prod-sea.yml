@@ -1,0 +1,16 @@
+classes:
+  - projects.kapitan-demo
+
+  - components.tuna
+  - components.cod
+  - components.sardine
+
+  - features.brine
+  - features.canned
+
+  - releases.v2.0.0
+  - stages.prod
+
+parameters:
+  target: prod-sea
+  owner: devops

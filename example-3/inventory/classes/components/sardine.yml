@@ -1,0 +1,15 @@
+parameters:
+  releases:
+    sardine: latest
+  sardine:
+    image: alledm/sardine:${sardine:release}
+    release: ${releases:sardine}
+    replicas: ${replicas}
+    args:
+    - --verbose=${verbose}
+
+  kapitan:
+    mains:
+      - components/sardine/main.jsonnet
+    docs:
+      - components/sardine/docs/sardine.md

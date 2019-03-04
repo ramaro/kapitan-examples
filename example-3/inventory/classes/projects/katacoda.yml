@@ -1,0 +1,10 @@
+classes:
+  - projects.common
+
+parameters:
+  cluster:
+    type: kubernetes
+    id: kubernetes
+    name: kubernetes
+    cluster: kubernetes
+    user: kubernetes-admin

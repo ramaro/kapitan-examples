@@ -1,0 +1,4 @@
+parameters:
+  tuna:
+    args:
+      - --canned

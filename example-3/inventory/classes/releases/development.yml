@@ -1,0 +1,5 @@
+parameters:
+  releases:
+    tuna: latest
+    sardines: latest
+    cod: latest

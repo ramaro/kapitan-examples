@@ -1,0 +1,29 @@
+apiVersion: v1
+data:
+  README: '<!DOCTYPE html>
+
+    <html>
+
+    <head>
+
+    <title>Welcome to prod-sea!</title>
+
+    </head>
+
+    <body>
+
+    <h1>Welcome to prod-sea!</h1>
+
+    <p>
+
+    This document was compiled with kapitan and is running in standard-cluster-1
+
+    </p>
+
+    </body>
+
+    </html>'
+kind: ConfigMap
+metadata:
+  name: readme
+  namespace: prod-sea

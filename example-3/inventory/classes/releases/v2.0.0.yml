@@ -1,0 +1,5 @@
+parameters:
+  releases:
+    tuna: v2.0.0
+    sardines: v2.0.0
+    cod: v2.0.0
