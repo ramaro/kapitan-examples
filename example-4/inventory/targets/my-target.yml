@@ -1,0 +1,9 @@
+classes:
+  - init
+  - charts.nfs
+  - charts.coredns
+
+parameters:
+  coredns:
+    helm_values:
+      replicaCount: 2

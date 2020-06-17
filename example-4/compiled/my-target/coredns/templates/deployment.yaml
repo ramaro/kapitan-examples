@@ -1,0 +1,69 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: coredns
+    chart: coredns-1.2.0
+    heritage: Tiller
+    k8s-app: coredns
+    kubernetes.io/cluster-service: 'true'
+    kubernetes.io/name: CoreDNS
+    release: my-target
+  name: my-target-coredns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: coredns
+      k8s-app: coredns
+      release: my-target
+  template:
+    metadata:
+      annotations:
+        checksum/config: 2db3e90dfd386a5cdc111e686a46dadcb239b10f4c375c8c6720b47f8715259f
+        scheduler.alpha.kubernetes.io/critical-pod: ''
+        scheduler.alpha.kubernetes.io/tolerations: '[{"key":"CriticalAddonsOnly",
+          "operator":"Exists"}]'
+      labels:
+        app: coredns
+        k8s-app: coredns
+        release: my-target
+    spec:
+      containers:
+        - args:
+            - -conf
+            - /etc/coredns/Corefile
+          image: coredns/coredns:1.2.6
+          imagePullPolicy: IfNotPresent
+          livenessProbe:
+            failureThreshold: 5
+            httpGet:
+              path: /health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 60
+            successThreshold: 1
+            timeoutSeconds: 5
+          name: coredns
+          ports:
+            - containerPort: 53
+              protocol: UDP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          volumeMounts:
+            - mountPath: /etc/coredns
+              name: config-volume
+      dnsPolicy: Default
+      serviceAccountName: default
+      volumes:
+        - configMap:
+            items:
+              - key: Corefile
+                path: Corefile
+            name: my-target-coredns
+          name: config-volume

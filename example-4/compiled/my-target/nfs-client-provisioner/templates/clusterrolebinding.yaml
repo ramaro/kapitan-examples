@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app: nfs-client-provisioner
+    chart: nfs-client-provisioner-1.2.8
+    heritage: Tiller
+    release: my-target
+  name: run-my-target-nfs-client-provisioner
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: my-target-nfs-client-provisioner-runner
+subjects:
+  - kind: ServiceAccount
+    name: my-target-nfs-client-provisioner
+    namespace: my-target

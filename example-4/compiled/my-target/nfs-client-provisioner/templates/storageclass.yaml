@@ -1,0 +1,14 @@
+allowVolumeExpansion: true
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  labels:
+    app: nfs-client-provisioner
+    chart: nfs-client-provisioner-1.2.8
+    heritage: Tiller
+    release: my-target
+  name: nfs-client
+parameters:
+  archiveOnDelete: 'true'
+provisioner: cluster.local/my-target-nfs-client-provisioner
+reclaimPolicy: Delete

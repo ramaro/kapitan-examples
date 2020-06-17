@@ -1,0 +1,18 @@
+parameters:
+  nfs:
+    helm_values: {}
+  kapitan:
+    compile:
+      - output_path: .
+        input_type: helm
+        input_paths:
+          - components/charts/nfs-client-provisioner
+        helm_values: ${nfs:helm_values}
+        helm_params:
+          release_name: ${target}
+          namespace: ${target}
+    dependencies:
+      - type: https
+        source: https://kubernetes-charts.storage.googleapis.com/nfs-client-provisioner-1.2.8.tgz
+        unpack: True
+        output_path: components/charts

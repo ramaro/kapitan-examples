@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nfs-client-provisioner
+    chart: nfs-client-provisioner-1.2.8
+    heritage: Tiller
+    release: my-target
+  name: my-target-nfs-client-provisioner
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
+      release: my-target
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations: null
+      labels:
+        app: nfs-client-provisioner
+        release: my-target
+    spec:
+      containers:
+        - env:
+            - name: PROVISIONER_NAME
+              value: cluster.local/my-target-nfs-client-provisioner
+            - name: NFS_SERVER
+              value: null
+            - name: NFS_PATH
+              value: /ifs/kubernetes
+          image: quay.io/external_storage/nfs-client-provisioner:v3.1.0-k8s1.11
+          imagePullPolicy: IfNotPresent
+          name: nfs-client-provisioner
+          volumeMounts:
+            - mountPath: /persistentvolumes
+              name: nfs-client-root
+      serviceAccountName: my-target-nfs-client-provisioner
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            path: /ifs/kubernetes
+            server: null
